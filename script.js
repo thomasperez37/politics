@@ -23,6 +23,10 @@ function callCivicsAPIWithSearchTermA(searchTerm) {
         success: function(response) {
             
         },
+        error: function(a,b,c) {
+            $("#list1").html("<p>Error. Location not found.</p>");
+            
+        },
     });
 }
 
@@ -39,6 +43,17 @@ function callCivicsAPIWithSearchTermB(searchTerm) {
         url: url,
         method: "GET",
         success: function(response) {
+            $("#list3").append("<p>Address: " + response.normalizedInput.line1 + "</p>");
+            $("#list3").append("<p>City: " + response.normalizedInput.city + "</p>");
+            $("#list3").append("<p>State: " + response.normalizedInput.state + "</p>");
+            $("#list3").append("<p>Zip Code: " + response.normalizedInput.zip + "</p>");
+            $("#list3").append("<p> </p>");
+            for(var b = 0; b < response.officials.length; b++) {
+                
+            }
+        },
+        error: function(a,b,c) {
+            $("#list3").html("<p>Error. Location not found.</p>");
             
         },
     });
@@ -57,6 +72,10 @@ function callCivicsAPIWithSearchTermC(searchTerm) {
         url: url,
         method: "GET",
         success: function(response) {
+            
+        },
+        error: function(a,b,c) {
+            $("#list2").html("<p>Error. Location not found.</p>");
             
         },
     });
