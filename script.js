@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $("#search").click(function() {
         var searchTerm = $("#srch-term").val();
+        $("#list3").html("");
         callCivicsAPIWithSearchTermB(searchTerm);
     });
 });
